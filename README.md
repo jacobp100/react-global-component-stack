@@ -36,6 +36,8 @@ const Title = globalComponentStack({ title: "" }, props => {
 
 The first argument is the default props, and the second is a function that is run whenever the props change. The function is actually called with `(currentProps, previousProps)`, so you can be more efficient about updates.
 
+When there are no `Title` components mounted, the updater will get called with the default props, and the page title will be cleared. If you render two `Title` components, and one of them unmounts, the document's title will be what is defined in the remaining component.
+
 Say we want to implement a way to hide the home indicator on the new iPhone X. We can implement some native code that can toggle it, and expose a component as so.
 
 ```
