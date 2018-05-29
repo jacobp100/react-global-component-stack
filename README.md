@@ -38,6 +38,10 @@ The first argument is the default props, and the second is a function that is ru
 
 Say we want to implement a way to hide the home indicator on the new iPhone X. We can implement some native code that can toggle it, and expose a component as so.
 
+```
+npm install react-global-component-stack
+```
+
 ```js
 const HomeIndicator = globalComponentStack(
   { hidden: false },
